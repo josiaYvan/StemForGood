@@ -1,0 +1,63 @@
+.ulAccueil li{
+     width: 100%;
+     margin: 10px 0;
+     border-bottom: 0.5px solid;
+}
+
+li i {
+     font-size: medium;
+     font-weight: 500;
+     float: right;
+}
+
+.accueil p{
+     padding: 20px;
+     background-color: rgba(71, 71, 71, 0.1);
+     border-radius: 12px;
+}
+
+.accueil label{
+     position: relative;
+     top: 20px;
+     left: 20px;
+     background-color: white; 
+     padding: 10px;
+     border-radius: 12px;
+}
+     /* <ul className="ulAccueil">
+     <li>
+       ID: <i>{User[14]}</i>{" "}
+     </li>
+     <li>
+       Nom de famille: <i>{User[3]}</i>{" "}
+     </li>
+     <li>
+       Prénoms: <i>{User[2]}</i>{" "}
+     </li>
+     <li>
+       Date de naissance: <i>{User[5]}</i>{" "}
+     </li>
+     <li>
+       E-mail: <i>{User[6]}</i>{" "}
+     </li>
+     <li>
+       Numéro téléphone: <i>{User[7]}</i>{" "}
+     </li>
+     <li>
+       Adresse domicile: <i>{User[8]}</i>{" "}
+     </li>
+     <li>
+       Ville: <i>{User[9]}</i>{" "}
+     </li>
+     <li>
+       Activité: <i>{User[10]}</i>{" "}
+     </li>
+     <li>
+       Date de paiement première cotisation: <i>{User[11]}</i>{" "}
+     </li>
+     <li>
+       Date de paiement dernière cotisation: <i>{User[12]}</i>{" "}
+     </li>
+   </ul> */
+   
+   

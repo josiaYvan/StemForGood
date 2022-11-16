@@ -1,43 +1,62 @@
-import { Grid, Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import Icon from "@mdi/react";
 import { mdiQrcode, mdiQrcodeScan } from "@mdi/js";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { UserState } from "../atoms/Users";
 
 function Home() {
-  return (
-    <div>
-      <Typography style={{ margin: 30 }} variant="h2">
-        React QR Code
-      </Typography>
+  const [User] = useRecoilState(UserState);
 
-      <Grid container spacing={6}>
-        <Grid item xs={6}>
-          <Link to="/qr_generator">
-            <Button variant="contained" size="large" color="primary">
-              <Icon
-                style={{ padding: 10 }}
-                path={mdiQrcode}
-                title="QR Generator"
-                size={10}
-                color="white"
-              />
-            </Button>
-          </Link>
-        </Grid>
-        <Grid item xs={6}>
-          <Link to="/qr_scanner">
-            <Button variant="contained" size="large" color="primary">
-              <Icon
-                style={{ padding: 10 }}
-                path={mdiQrcodeScan}
-                title="QR Scanner"
-                size={10}
-                color="white"
-              />
-            </Button>
-          </Link>
-        </Grid>
-      </Grid>
+  return (
+    <div className="container">
+      <div className="center">
+        <div className="container ">
+          <div className="card" style={{ marginTop: "4em" }}>
+            <div style={{ padding: "50px " }}>
+              <h5 style={{ marginBottom: "2em " }}>
+                <img className="logo" src="stem4good.png" alt="" />
+                <br />
+                Authentification
+              </h5>
+              <div className="row">
+                {User && User[10] === "STAFF" && (
+                  <div className="col s12 l6" style={{ marginBottom: "10px" }}>
+                    <Link to="/qr_generator" className="">
+                      <Button variant="contained" size="large" color="primary">
+                        <Icon
+                          style={{ padding: 10 }}
+                          path={mdiQrcode}
+                          title="QR Generator"
+                          size={10}
+                          color="white"
+                        />
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+                <div
+                  className={
+                    User && User[10] === "STAFF" && "col s12 l6 center"
+                  }
+                >
+                  <Link to="/qr_scanner">
+                    <Button variant="contained" size="large" color="primary">
+                      <Icon
+                        style={{ padding: 10 }}
+                        path={mdiQrcodeScan}
+                        title="QR Scanner"
+                        size={10}
+                        color="white"
+                      />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.image{
+     margin-top: 5px;
+     width: 3.5em;
+     
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+     width: 10em;
+}
+.arrowBack {
+     margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fixed{
+     position: sticky;
+     top: 0;
+     z-index: 5000;
+}
+
+
+
+@media only screen and (max-width: 1300px ) and (min-width: 600px) {
+  .container{
+       width: 80%;
   }
 }
 
-.App-header {
-  background-color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(0, 0, 0);
-}
+@media only screen and (max-width: 600px) {
+     body {
+       background-color: lightblue;
+       font-size: small;
+     }
 
-.App-link {
-  color: #61dafb;
-}
+     h2{
+          font-size: 20px;
+     }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+     .logo{
+          width: 5em;
+     }
+     
+     .arrowBack{
+          position: relative;
+          top: -3em;
+          left: -3em;
+     }
+     
+}
+@media only screen and (max-width: 500px) {
+     .qrscan{
+          position: relative;
+          left: -2em;
+     }
+}
+     
+
+@media only screen and (max-width: 400px) {
+     
+     .row{
+          position: relative;
+          left: -1em;
+     }
+
+     .qrscan{
+          position: relative;
+          left: -4em;
+     }
 }
