@@ -14,7 +14,7 @@ const Navigation = () => {
           <img className="image" src="stemwhite.png" alt="" />
         </span>
         <a href="" data-target="mobile-menu" className="sidenav-trigger">
-          <i class="material-icons">menu</i>
+          <i className="material-icons">menu</i>
         </a>
         <ul className="right hide-on-med-and-down">
           {User[10] === "STAFF" ? (

@@ -6,7 +6,7 @@ import { PopupState } from "../atoms/Users";
 import "../styles/Popup.css";
 
 const Popup = (props) => {
-  const [setPop] = useRecoilState(PopupState);
+  const [Pop, setPop] = useRecoilState(PopupState);
 
   return (
     props.show && (

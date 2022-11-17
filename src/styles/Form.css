@@ -1,4 +1,10 @@
-/* .input-field label {
+.input-field p {
+     float: left;
+     color: gray;
+}
+
+.inputFile{
      position: relative;
-     top: 20px;
-} */
+     top: -10px;
+     color: grey;
+}

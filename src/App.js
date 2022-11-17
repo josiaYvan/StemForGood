@@ -38,9 +38,10 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <RouteGuard path="/qr_generator" component={QRgen} />
-            <Route path="/qr_scanner" component={QRscan} />
+            {!User && <Route path="/qr_scanner" component={QRscan} />}
+
             <AuthenticatedRoute path="/accueil" component={Accueil} />
-            <RouteGuard path="/présence" component={Presence} />
+            <AuthenticatedRoute path="/présence" component={Presence} />
             <Route path="**" component={PageNotFound} />
           </Switch>
         </Router>

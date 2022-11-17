@@ -39,11 +39,11 @@ function QRscanner() {
       //   maniplation de données
       const doc = datafetch.data.GoogleSheetData;
       for (let i = 0; i < doc.length; i++) {
-        for (let j = 0; j < 15; j++) {
-          if (i !== 0 && j === 14) {
+        for (let j = 0; j < 14; j++) {
+          if (i !== 0 && j === 13) {
             let QRcode = doc[i][j];
             if (QRcode === qrscan) {
-              for (let k = 0; k < 15; k++) {
+              for (let k = 0; k < 14; k++) {
                 user.push(doc[i][k]);
               }
               if (user) {

@@ -6,8 +6,7 @@ import { PopupState } from "../atoms/Users";
 import hash from "../services/hash";
 import "../styles/Form.css";
 
-const Form = () => {
-  const [formSubmti, setFormSubmti] = useState(false);
+const Form = (props) => {
   const [Nom, setNom] = useState("");
   const [Prenom, setPrenom] = useState("");
   const [date, setDate] = useState("");
@@ -29,21 +28,15 @@ const Form = () => {
     const ID = hash(date + Adress);
     setQr(ID);
     const d = new Date();
-
-    console.log(Photo);
     await axios({
       method: "post",
       url: "https://eorfhj2o3yyxx0y.m.pipedream.net",
       data: {
         datetime:
           d.getDate() +
-          "/" +
           d.getMonth() +
-          "/" +
           d.getFullYear() +
-          " " +
           d.getHours() +
-          ":" +
           d.getMinutes(),
         email,
         firstname: Nom,
@@ -109,19 +102,7 @@ const Form = () => {
               <label htmlFor="email">Nom de famille</label>
             </div>
           </div>
-          <div className="col s12 l6">
-            <div className="input-field">
-              <input
-                type="file"
-                name="Photo d'identité"
-                //  accept="image/png, image/jpg, image/jpeg"
-                id="email"
-                onChange={(e) => setPhoto(e.target.files)}
-                value={Photo}
-              />
-              <label htmlFor="Photo d'identité">Photo d'identité</label>
-            </div>
-          </div>
+
           <div className="col s12 l6">
             <div className="input-field">
               <input
@@ -129,6 +110,8 @@ const Form = () => {
                 type="date"
                 name="date"
                 id="date"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
                 className="datepicker"
               />
               <label htmlFor="date">Date de naissance</label>
@@ -141,8 +124,8 @@ const Form = () => {
                 type="text"
                 name="Adresse email"
                 id="email"
-                onChange={(e) => setDate(e.target.value)}
-                value={date}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <label htmlFor="email">Adresse email</label>
             </div>
@@ -154,8 +137,8 @@ const Form = () => {
                 type="text"
                 name="Numéro de téléphone"
                 id="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                onChange={(e) => setTel(e.target.value)}
+                value={Tel}
               />
               <label htmlFor="email">Numéro de téléphone</label>
             </div>
@@ -167,8 +150,8 @@ const Form = () => {
                 type="text"
                 name="Adresse domicile"
                 id="email"
-                onChange={(e) => setTel(e.target.value)}
-                value={Tel}
+                onChange={(e) => setAdress(e.target.value)}
+                value={Adress}
               />
               <label htmlFor="email">Adresse domicile</label>
             </div>
@@ -179,8 +162,8 @@ const Form = () => {
                 required
                 type="text"
                 name="Ville"
-                onChange={(e) => setAdress(e.target.value)}
-                value={Adress}
+                onChange={(e) => setVille(e.target.value)}
+                value={Ville}
                 id="email"
               />
               <label htmlFor="email">Ville</label>
@@ -191,10 +174,10 @@ const Form = () => {
               <input
                 required
                 type="text"
-                name="Activité"
-                onChange={(e) => setVille(e.target.value)}
-                value={Ville}
-                id="email"
+                name="Ville"
+                onChange={(e) => setActivite(e.target.value)}
+                value={Activite}
+                id="activite"
               />
               <label htmlFor="email">Activité</label>
             </div>
@@ -209,7 +192,7 @@ const Form = () => {
                 value={payment}
                 id="email"
               />
-              <label htmlFor="email">Activité</label>
+              <label htmlFor="email">Payement</label>
             </div>
           </div>
           <div className="col s12 l6">
@@ -221,19 +204,37 @@ const Form = () => {
                 value={lastpayment}
                 id="email"
               />
-              <label htmlFor="email">Activité</label>
+              <label htmlFor="email">Date du prochain payement</label>
             </div>
           </div>
           <div className="col s12 l6">
             <div className="input-field">
-              <input type="text" name="qrcode" id="email" value={qr} readOnly />
+              <input
+                type="text"
+                name="qrcode"
+                id="email"
+                onChange={(e) => setQr(e.target.value)}
+                value={qr}
+                readOnly
+              />
               <label htmlFor="email">Identifiant</label>
             </div>
           </div>
-          <button type="submit" className="btn indigo">
-            Valider
-          </button>
+          <div className="col s12 l6">
+            <div className="input-field">
+              <p>Photo d'identité</p>
+              <input
+                className="inputFile"
+                type="file"
+                name="photo"
+                accept="image/png, image/jpg, image/jpeg"
+              />
+            </div>
+          </div>
         </div>
+        <button type="submit" className="btn indigo">
+          Valider
+        </button>
       </form>
     </div>
   );

@@ -40,7 +40,7 @@ function Home() {
                     User && User[10] === "STAFF" && "col s12 l6 center"
                   }
                 >
-                  <Link to="/qr_scanner">
+                  <Link to={!User && "/qr_scanner"}>
                     <Button variant="contained" size="large" color="primary">
                       <Icon
                         style={{ padding: 10 }}
