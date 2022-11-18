@@ -22,7 +22,7 @@ function Home() {
               <div className="row">
                 {User && User[10] === "STAFF" && (
                   <div className="col s12 l6" style={{ marginBottom: "10px" }}>
-                    <Link to="/qr_generator" className="">
+                    <Link to="/form" className="">
                       <Button variant="contained" size="large" color="primary">
                         <Icon
                           style={{ padding: 10 }}

@@ -8,7 +8,10 @@ const Navigation = () => {
   const [User, setUser] = useRecoilState(UserState);
 
   return (
-    <nav className="black nav-wrapper ">
+    <nav
+      className="black nav-wrapper"
+      style={{ position: "sticky", top: "0px", zIndex: 10 }}
+    >
       <div className="container">
         <span className="brand-logo">
           <img className="image" src="stemwhite.png" alt="" />

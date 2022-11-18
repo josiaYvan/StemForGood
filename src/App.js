@@ -15,6 +15,7 @@ import PageNotFound from "./pages/PageNotFound";
 import RouteGuard from "./components/RouteGuard";
 import Popup from "./components/Popup";
 import Navigation from "./components/Navigation";
+import Form from "./components/Form";
 
 function App() {
   const [User, setUser] = useRecoilState(UserState);
@@ -37,7 +38,7 @@ function App() {
           {User && <Navigation />}
           <Switch>
             <Route exact path="/" component={Home} />
-            <RouteGuard path="/qr_generator" component={QRgen} />
+            <RouteGuard path="/form" component={Form} />
             {!User && <Route path="/qr_scanner" component={QRscan} />}
 
             <AuthenticatedRoute path="/accueil" component={Accueil} />
